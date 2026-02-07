@@ -277,7 +277,9 @@ const IliminodeWebsite: React.FC = () => {
       {/* Mission Section */}
       <section
         id="mission"
-        ref={(el) => (sectionsRef.current['mission'] = el)}
+        ref={(el) => {
+          sectionsRef.current['mission'] = el;
+        }}
         className={`fade-in-up ${visibleSections.has('mission') ? 'visible' : ''}`}
         style={styles.mission}
       >
@@ -299,7 +301,9 @@ const IliminodeWebsite: React.FC = () => {
       {/* Values Section */}
       <section
         id="values"
-        ref={(el) => (sectionsRef.current['values'] = el)}
+        ref={(el) => {
+          sectionsRef.current['values'] = el;
+        }}
         className={`fade-in-up ${visibleSections.has('values') ? 'visible' : ''}`}
         style={styles.values}
       >
@@ -317,7 +321,9 @@ const IliminodeWebsite: React.FC = () => {
       {/* Community Section */}
       <section
         id="join"
-        ref={(el) => (sectionsRef.current['join'] = el)}
+        ref={(el) => {
+          sectionsRef.current['join'] = el;
+        }}
         className={`fade-in-up ${visibleSections.has('join') ? 'visible' : ''}`}
         style={styles.community}
       >
