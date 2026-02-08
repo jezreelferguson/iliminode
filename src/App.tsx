@@ -364,7 +364,7 @@ const IliminodeWebsite: React.FC = () => {
       {/* Footer */}
       <footer style={styles.footer}>
         <div style={styles.footerContent}>
-          <img src={logo} alt="iliminode logo" style={styles.footerLogoImage} style={styles.footerLogo} />
+          <img src={logo} alt="iliminode logo" style={styles.footerLogoImage} />
           <div style={styles.footerTagline}>Learn. Build. Connect.</div>
           <div style={styles.socialLinks}>
             <span className="social-icon" style={styles.socialIcon}>𝕏</span>
