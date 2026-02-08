@@ -1,5 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import logo from './assets/images/iliminodem.jpg';
+// import { Helmet } from 'react-helmet-async';
+
+// <Helmet>
+//   <script type="application/ld+json">
+//     {JSON.stringify({
+//       "@context": "https://schema.org",
+//       "@type": "Organization",
+//       "name": "Iliminode",
+//       "url": "https://www.iliminode.com",
+//       "logo": "https://iliminode.vercel.app/assets/images/iliminodem.jpg",
+//       "description": "Iliminode is a grassroots tech community in Sowutoum–Israel, Accra. We focus on practical skills, real projects, mentorship, and collaboration—creating a supportive space where beginners and experienced developers connect, share knowledge, and solve real-world problems.",
+//       "sameAs": [
+//         "https://twitter.com/iliminode",
+//         "https://www.linkedin.com/company/iliminode/"
+//       ]
+//     })}
+//   </script>
+// </Helmet>
+
 
 const IliminodeWebsite: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -259,7 +278,7 @@ const IliminodeWebsite: React.FC = () => {
 
       {/* Hero Section */}
       <section style={styles.hero}>
-        <img src={logo} alt="Iliminode Logo" style={{ width: '320px', marginBottom: '1.5rem', borderRadius: '20px' }} />
+        <img src={logo} alt="iliminode Logo" style={{ width: '320px', marginBottom: '1.5rem', borderRadius: '20px' }} />
         <div style={styles.heroTagline}>Sowutoum's Tech Community</div>
         <p style={styles.heroSubtitle}>
           A grassroots tech community in Sowutoum–Israel, Accra, bringing people together to learn, build, and grow through technology.
@@ -294,7 +313,7 @@ const IliminodeWebsite: React.FC = () => {
           ))}
         </div>
         <div style={styles.missionStatement}>
-          At Iliminode, we believe technology is a tool for empowerment. Our goal is to nurture local talent, encourage innovation, and connect the Sowutoum community to global tech opportunities.
+          At iliminode, we believe technology is a tool for empowerment. Our goal is to nurture local talent, encourage innovation, and connect the Sowutoum community to global tech opportunities.
         </div>
       </section>
 
@@ -329,7 +348,7 @@ const IliminodeWebsite: React.FC = () => {
       >
         <h2 style={styles.communityTitle}>Join Our Growing Community</h2>
         <p style={styles.communityText}>
-          Whether you're a beginner taking your first steps or an experienced developer looking to give back, there's a place for you at Iliminode.
+          Whether you're a beginner taking your first steps or an experienced developer looking to give back, there's a place for you at iliminode.
         </p>
         <div style={styles.stats}>
           {stats.map((stat, index) => (
@@ -344,7 +363,7 @@ const IliminodeWebsite: React.FC = () => {
       {/* Footer */}
       <footer style={styles.footer}>
         <div style={styles.footerContent}>
-          <div style={styles.footerLogo}>Iliminode</div>
+          <div style={styles.footerLogo}>iliminode</div>
           <div style={styles.footerTagline}>Learn. Build. Connect.</div>
           <div style={styles.socialLinks}>
             <span className="social-icon" style={styles.socialIcon}>𝕏</span>
@@ -354,7 +373,8 @@ const IliminodeWebsite: React.FC = () => {
           </div>
           <div style={styles.footerInfo}>
             <p>Based in Sowutoum–Israel, Accra, Ghana</p>
-            <p style={{ marginTop: '0.5rem' }}>&copy; 2026 Iliminode. Empowering our community through technology.</p>
+            <p style={{ marginTop: '0.5rem' }}>&copy; 2026 iliminode
+              . Empowering our community through technology.</p>
           </div>
         </div>
       </footer>
