@@ -268,7 +268,7 @@ const IliminodeWebsite: React.FC = () => {
         boxShadow: scrolled ? '0 4px 30px rgba(74, 31, 196, 0.08)' : 'none',
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
       }}>
-        <div style={styles.logo}>iliminode</div>
+        {/* <div style={styles.logo}>iliminode</div> */}
         <nav style={styles.nav}>
           <span className="nav-link" onClick={() => scrollToSection('about')} style={styles.navLink}>About</span>
           <span className="nav-link" onClick={() => scrollToSection('mission')} style={styles.navLink}>Mission</span>
