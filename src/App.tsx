@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import logo from './assets/images/iliminodem.jpg';
+import { FaXTwitter, FaDiscord, FaWhatsapp } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+
 // import { Helmet } from 'react-helmet-async';
 
 // <Helmet>
@@ -366,12 +369,13 @@ const IliminodeWebsite: React.FC = () => {
         <div style={styles.footerContent}>
           <img src={logo} alt="iliminode logo" style={styles.footerLogo} />
           <div style={styles.footerTagline}>Learn. Build. Connect.</div>
-          <div style={styles.socialLinks}>
-            <span className="social-icon" style={styles.socialIcon}>𝕏</span>
-            <span className="social-icon" style={styles.socialIcon}>⚡</span>
-            <span className="social-icon" style={styles.socialIcon}>💬</span>
-            <span className="social-icon" style={styles.socialIcon}>✉️</span>
-          </div>
+         <div style={styles.socialLinks}>
+  <FaXTwitter style={styles.socialIcon} />
+  <FaDiscord style={styles.socialIcon} />
+  <FaWhatsapp style={styles.socialIcon} />
+  <MdEmail style={styles.socialIcon} />
+</div>
+
           <div style={styles.footerInfo}>
             <p>Based in Sowutoum–Israel, Accra, Ghana</p>
             <p style={{ marginTop: '0.5rem' }}>&copy; {currentYear} iliminode. All rights reserved
