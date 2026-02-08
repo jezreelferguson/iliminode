@@ -370,10 +370,10 @@ const IliminodeWebsite: React.FC = () => {
           <img src={logo} alt="iliminode logo" style={styles.footerLogo} />
           <div style={styles.footerTagline}>Learn. Build. Connect.</div>
          <div style={styles.socialLinks}>
-  <FaXTwitter style={styles.socialIcon} />
-  <FaDiscord style={styles.socialIcon} />
-  <FaWhatsapp style={styles.socialIcon} />
-  <MdEmail style={styles.socialIcon} />
+  <FaXTwitter style={styles.socialIcon} className="social-icon" />
+  <FaDiscord style={styles.socialIcon} className="social-icon" />
+  <FaWhatsapp style={styles.socialIcon} className="social-icon" />
+  <MdEmail style={styles.socialIcon} className="social-icon" />
 </div>
 
           <div style={styles.footerInfo}>
@@ -716,17 +716,19 @@ const styles: { [key: string]: React.CSSProperties } = {
     gap: '2.5rem',
     justifyContent: 'center',
     marginBottom: '2.5rem',
+    
   },
-  socialIcon: {
-    fontSize: '2rem',
-    color: 'white',
-  },
-  footerInfo: {
-    fontSize: '1rem',
-    opacity: 0.7,
-    marginTop: '2rem',
-    lineHeight: 1.8,
-  },
+socialIcon: {
+  fontSize: '2rem',
+  color: 'white',
+  transition: 'all 0.3s ease',  
+},
+footerInfo: {
+  fontSize: '1rem',
+  opacity: 0.7,
+  marginTop: '2rem',
+  lineHeight: 1.8,
+},
 };
 
 export default IliminodeWebsite;
