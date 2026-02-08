@@ -99,6 +99,7 @@ const IliminodeWebsite: React.FC = () => {
     { number: '100%', label: 'Community Driven' },
   ];
 
+  const currentYear = new Date().getFullYear();
   return (
     <div style={styles.container}>
       <style>{`
@@ -363,7 +364,7 @@ const IliminodeWebsite: React.FC = () => {
       {/* Footer */}
       <footer style={styles.footer}>
         <div style={styles.footerContent}>
-          <div style={styles.footerLogo}>iliminode</div>
+          <img src={logo} alt="iliminode logo" style={styles.footerLogoImage} style={styles.footerLogo} />
           <div style={styles.footerTagline}>Learn. Build. Connect.</div>
           <div style={styles.socialLinks}>
             <span className="social-icon" style={styles.socialIcon}>𝕏</span>
@@ -373,7 +374,7 @@ const IliminodeWebsite: React.FC = () => {
           </div>
           <div style={styles.footerInfo}>
             <p>Based in Sowutoum–Israel, Accra, Ghana</p>
-            <p style={{ marginTop: '0.5rem' }}>&copy; 2026 iliminode
+            <p style={{ marginTop: '0.5rem' }}>&copy; {currentYear} iliminode. All rights reserved
               . Empowering our community through technology.</p>
           </div>
         </div>
@@ -460,7 +461,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   logo: {
     fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '2rem',
+    fontSize: '1rem',
     fontWeight: 800,
     color: '#4A1FC4',
     letterSpacing: '-0.03em',
@@ -695,12 +696,10 @@ const styles: { [key: string]: React.CSSProperties } = {
     margin: '0 auto',
   },
   footerLogo: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '2.8rem',
-    fontWeight: 800,
-    color: '#4A1FC4',
-    marginBottom: '1rem',
-    letterSpacing: '-0.03em',
+    width: '180px',
+    margin: '0 auto 1.5rem',
+    display: 'block',
+    borderRadius: '15px',
   },
   footerTagline: {
     fontSize: '1.3rem',
