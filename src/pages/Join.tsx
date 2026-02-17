@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
 
 function Join() {   
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    location: '',
-    techInterests: '',
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   location: '',
+  //   techInterests: '',
+  // });
 
 
 
@@ -18,14 +17,12 @@ function Join() {
       <h2>Join Our Tech Community</h2>
       <form style={styles.form} onSubmit={(e) => {
         e.preventDefault();
-        console.log('Join Request:', formData);
       }}>
         <input
           style={styles.input}
           type="text"
           name="name"
           placeholder="Full Name"
-          value={formData.name}
          
           required
         />
@@ -34,7 +31,7 @@ function Join() {
           type="email"
           name="email"
           placeholder="Email"
-          value={formData.email}
+          
          
           required
         />
@@ -43,7 +40,6 @@ function Join() {
           type="tel"
           name="phone"
           placeholder="Phone Number"
-          value={formData.phone}
          
           required
         />
@@ -52,7 +48,6 @@ function Join() {
           type="text"
           name="location"
           placeholder="Location"
-          value={formData.location}
          
           required
         />
@@ -60,7 +55,6 @@ function Join() {
           style={styles.textarea}
           name="techInterests"
           placeholder="Tech Interests (optional)"
-          value={formData.techInterests}
          
         />
         <button style={styles.button} type="submit">Request to Join</button>
