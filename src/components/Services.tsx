@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   FaMobileAlt, FaLaptopCode, FaRobot, FaChartLine, 
-  FaPaintBrush, FaVideo, FaDesktop, FaNetworkWired, FaSearch 
+  FaPaintBrush, FaVideo, FaDesktop, FaSearch 
 } from 'react-icons/fa';
 
 const services = [
