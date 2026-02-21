@@ -280,7 +280,7 @@ const IliminodeWebsite: React.FC = () => {
           <span className="nav-link" onClick={() => scrollToSection('about')} style={styles.navLink}>About</span>
           <span className="nav-link" onClick={() => scrollToSection('mission')} style={styles.navLink}>Mission</span>
           <span className="nav-link" onClick={() => scrollToSection('values')} style={styles.navLink}>Values</span>
-          <span className="nav-link" onClick={() => scrollToSection('j')} style={styles.navLink}>Join US</span>
+          {/* <span className="nav-link" onClick={() => scrollToSection('j')} style={styles.navLink}>Join US</span> */}
           <span className="nav-link" onClick={() => scrollToSection('team')} style={styles.navLink}>Team</span>
         </nav>
       </header>
@@ -324,7 +324,7 @@ const IliminodeWebsite: React.FC = () => {
           ))}
         </div>
         <div style={styles.missionStatement}>
-          At iliminode, we believe technology is a tool for empowerment. Our goal is to nurture local talent, encourage innovation, and connect the Sowutoum community to global tech opportunities.
+        iliminode is a virtual tech community where technology meets opportunity. We nurture talent, spark innovation, and connect learners worldwide to the tech ecosystem.
         </div>
       </section>
 
