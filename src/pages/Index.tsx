@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import ferguson from '../assets/images/team/Ferguson.jpeg';
 import { Link } from 'react-router-dom';
 import Services from '../components/Services';
+import Contact from '../components/Contact';
 // import { Helmet } from 'react-helmet-async';
 
 // <Helmet>
@@ -279,18 +280,19 @@ const IliminodeWebsite: React.FC = () => {
           <span className="nav-link" onClick={() => scrollToSection('about')} style={styles.navLink}>About</span>
           <span className="nav-link" onClick={() => scrollToSection('mission')} style={styles.navLink}>Mission</span>
           <span className="nav-link" onClick={() => scrollToSection('values')} style={styles.navLink}>Values</span>
-          <span className="nav-link" onClick={() => scrollToSection('join')} style={styles.navLink}>Join Us</span>
+          <span className="nav-link" onClick={() => scrollToSection('j')} style={styles.navLink}>Join US</span>
+          <span className="nav-link" onClick={() => scrollToSection('team')} style={styles.navLink}>Team</span>
         </nav>
       </header>
 
       {/* Hero Section */}
       <section style={styles.hero}>
         <img src={logo} alt="iliminode Logo" style={{ width: '320px', marginBottom: '1.5rem', borderRadius: '20px' }} />
-        <div style={styles.heroTagline}>Sowutoum's Tech Community</div>
+        <div style={styles.heroTagline}>Tech Community</div>
         <p style={styles.heroSubtitle}>
-          A grassroots tech community in Sowutoum–Israel, Accra, bringing people together to learn, build, and grow through technology.
+        A virtual grassroots tech community connecting learners, builders, and innovators worldwide to learn, collaborate, and grow through technology.
         </p>
-        <div style={styles.ctaContainer}>
+        <div style={styles.ctaContainer} id='j'>
             <Link to="/join">
           <button className="btn" onClick={() => scrollToSection('join')} style={{ ...styles.btn, ...styles.btnPrimary }}>
             Join the Community
@@ -351,7 +353,7 @@ const IliminodeWebsite: React.FC = () => {
 
 
       {/* team section */}
-      <section>
+      <section id='team'>
         <h2 style={styles.sectionTitle}>Meet the Team</h2>
         <div style={styles.teamContainer}>
           <div style={styles.teamMember}>
@@ -364,10 +366,28 @@ const IliminodeWebsite: React.FC = () => {
             <h3 style={styles.teamName}>{team2}</h3>
             <p style={styles.teamRole}>Co-Founder & Creative Director</p>
           </div>
+           <div style={styles.teamMember}>
+            <img src={logo} alt="" style={styles.teamPhoto} />
+            <h3 style={styles.teamName}>{team}</h3>
+            <p style={styles.teamRole}>Community Manager</p>
+          </div>
+           {/* <div style={styles.teamMember}>
+            <img src={logo} alt="Chrisman Boakye Yiadom" style={styles.teamPhoto} />
+            <h3 style={styles.teamName}>{team2}</h3>
+            <p style={styles.teamRole}>Co-Founder & Creative Director</p>
+          </div>
+           <div style={styles.teamMember}>
+            <img src={logo} alt="Chrisman Boakye Yiadom" style={styles.teamPhoto} />
+            <h3 style={styles.teamName}>{team2}</h3>
+            <p style={styles.teamRole}>Co-Founder & Creative Director</p>
+          </div> */}
 
         </div>
       </section>
 
+
+      {/* contact form */}
+      <Contact />
       {/* Community Section */}
       <section
         id="join"
@@ -410,7 +430,7 @@ const IliminodeWebsite: React.FC = () => {
           </div>
 
           <div style={styles.footerInfo}>
-            <p>Based in Sowutoum–Israel, Accra, Ghana</p>
+            <p>Accra, Ghana</p>
             <p style={{ marginTop: '0.5rem' }}>&copy; {currentYear} iliminode. All rights reserved
               . Empowering our community through technology.</p>
           </div>
