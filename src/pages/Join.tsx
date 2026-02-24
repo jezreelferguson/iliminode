@@ -1,36 +1,86 @@
-
+import axios from "axios";
+import { useState } from "react";
+import Swal from "sweetalert2";
 function Join() {   
-  // const [formData, setFormData] = useState({
-  //   name: '',
-  //   email: '',
-  //   phone: '',
-  //   location: '',
-  //   techInterests: '',
-  // });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    location: '',
+    techInterests: '',
+  });
+
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
+  
+  const webHookURL = "https://discord.com/api/webhooks/1475814436899000411/dSoOmGDprQHTjue9P4azG7h7icBw9FtAy1pOO_WsUB9gWK1Md10Ns2F6P89mpPNgKDww"
+  const postToDiscord = async () => {
+  try {
+    const res = await axios.post(
+      webHookURL,
+      {
+        content: `New Join Request:\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nLocation: ${formData.location}\nTech Interests: ${formData.techInterests}`
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    if (res.status === 204) { 
+      Swal.fire({
+        title: 'Request Sent!',
+        text: 'Your request to join has been sent successfully. We will get back to you soon.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    } else {
+      Swal.fire({
+        title: 'Error',
+        text: 'There was an issue sending your request. Please try again later.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
 
 
+    console.log("Posted to Discord:", res);
+  } catch (err) {
+    console.error("Error posting to Discord:", err);
+  }
+};
 
   return (
     <div style={styles.container}>
 
     <div style={styles.card}>
       <h2>Join Our Tech Community</h2>
-      <form style={styles.form} onSubmit={(e) => {
-        e.preventDefault();
-      }}>
+        <form style={styles.form} onSubmit={(e) => {
+          e.preventDefault();
+          postToDiscord();
+        }}>
         <input
           style={styles.input}
           type="text"
           name="name"
           placeholder="Full Name"
-         
+         value={formData.name}
+         onChange={handleChange}
           required
         />
         <input
           style={styles.input}
           type="email"
           name="email"
-          placeholder="Email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
           
          
           required
@@ -39,7 +89,9 @@ function Join() {
           style={styles.input}
           type="tel"
           name="phone"
-          placeholder="Phone Number"
+            placeholder="Phone Number"
+            value={formData.phone}
+            onChange={handleChange}
          
           required
         />
@@ -48,14 +100,16 @@ function Join() {
           type="text"
           name="location"
           placeholder="Location"
-         
+         value={formData.location}
+         onChange={handleChange}
           required
         />
         <textarea
           style={styles.textarea}
           name="techInterests"
           placeholder="Tech Interests (optional)"
-         
+          value={formData.techInterests}
+          onChange={handleChange}
         />
         <button style={styles.button} type="submit">Request to Join</button>
       </form>
