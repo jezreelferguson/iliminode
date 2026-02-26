@@ -31,7 +31,7 @@ export default function Contact() {
       }else {
         Swal.fire('Error', 'There was an issue sending your message. Please try again later.', 'error');
       }
-      console.log("Posted to Discord:", res);
+      // console.log("Posted to Discord:", res);
     } catch (err) {
       console.error("Error posting to Discord:", err);
     }

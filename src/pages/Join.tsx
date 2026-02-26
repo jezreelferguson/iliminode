@@ -19,7 +19,7 @@ function Join() {
   }
   
   const webHookURL = import.meta.env.JOIN_US_WEBHOOK_URL;
-  console.log("Webhook URL:", webHookURL); // Debugging line to check if the webhook URL is loaded correctly
+  // console.log("Webhook URL:", webHookURL); // Debugging line to check if the webhook URL is loaded correctly
   const postToDiscord = async () => {
   try {
     const res = await axios.post(
@@ -51,7 +51,7 @@ function Join() {
     }
 
 
-    console.log("Posted to Discord:", res);
+    // console.log("Posted to Discord:", res);
   } catch (err) {
     console.error("Error posting to Discord:", err);
   }
