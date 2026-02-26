@@ -18,7 +18,7 @@ export default function Contact() {
 
   const postToDiscord = async () => {
     try {
-      const webhookURL =import.meta.env.CONTACT_WEBHOOK_URL;
+      const webhookURL =import.meta.env.VITE_CONTACT_WEBHOOK_URL;
       const res = await axios.post(webhookURL, {
         content: `New Contact Message:\nName: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\nMessage: ${form.message}`
       }, {

@@ -18,7 +18,7 @@ function Join() {
     });
   }
   
-  const webHookURL = import.meta.env.JOIN_US_WEBHOOK_URL;
+  const webHookURL = import.meta.env.VITE_JOIN_US_WEBHOOK_URL;
   // console.log("Webhook URL:", webHookURL); // Debugging line to check if the webhook URL is loaded correctly
   const postToDiscord = async () => {
   try {
