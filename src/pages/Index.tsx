@@ -3,6 +3,7 @@ import logo from '../assets/images/iliminodem.jpg';
 import { FaXTwitter, FaDiscord, FaWhatsapp } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import ferguson from '../assets/images/team/Ferguson.jpeg';
+import augustine from '../assets/images/team/augustine.jpg';
 import { Link } from 'react-router-dom';
 import Services from '../components/Services';
 import Contact from '../components/Contact';
@@ -368,7 +369,7 @@ const IliminodeWebsite: React.FC = () => {
             <p style={styles.teamRole}>Co-Founder & Creative Director</p>
           </div>
            <div style={styles.teamMember}>
-            <img src={logo} alt="" style={styles.teamPhoto} />
+            <img src={augustine} alt="" style={styles.teamPhoto} />
             <h3 style={styles.teamName}>{team3}</h3>
             <p style={styles.teamRole}>Community Manager</p>
           </div>
