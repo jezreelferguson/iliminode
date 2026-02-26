@@ -18,13 +18,13 @@ export default function Contact() {
 
   const postToDiscord = async () => {
     try {
-      const webhookURL =import.meta.env.VITE_CONTACT_WEBHOOK_URL;
-      const res = await axios.post(webhookURL, {
-        content: `New Contact Message:\nName: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\nMessage: ${form.message}`
+      const res = await axios.post('/api/contact', {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
       }, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        headers: { 'Content-Type': 'application/json' },
       });
       if (res.status === 204) {
         Swal.fire('Success', 'Your message has been sent successfully!. We will get back to you soon.', 'success');

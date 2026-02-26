@@ -18,20 +18,18 @@ function Join() {
     });
   }
   
-  const webHookURL = import.meta.env.VITE_JOIN_US_WEBHOOK_URL;
-  // console.log("Webhook URL:", webHookURL); // Debugging line to check if the webhook URL is loaded correctly
   const postToDiscord = async () => {
   try {
     const res = await axios.post(
-      webHookURL,
+      '/api/join',
       {
-        content: `New Join Request:\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nLocation: ${formData.location}\nTech Interests: ${formData.techInterests}`
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        location: formData.location,
+        techInterests: formData.techInterests,
       },
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+      { headers: { 'Content-Type': 'application/json' } }
     );
 
     if (res.status === 204) { 
