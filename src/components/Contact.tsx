@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import axios from "axios";
+import Swal from "sweetalert2";
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -14,10 +15,26 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(form);
-    alert("Message sent successfully!");
+
+  const postToDiscord = async () => {
+    try {
+      const webhookURL =import.meta.env.CONTACT_WEBHOOK_URL;
+      const res = await axios.post(webhookURL, {
+        content: `New Contact Message:\nName: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\nMessage: ${form.message}`
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (res.status === 204) {
+        Swal.fire('Success', 'Your message has been sent successfully!. We will get back to you soon.', 'success');
+      }else {
+        Swal.fire('Error', 'There was an issue sending your message. Please try again later.', 'error');
+      }
+      console.log("Posted to Discord:", res);
+    } catch (err) {
+      console.error("Error posting to Discord:", err);
+    }
   };
 
   return (
@@ -28,7 +45,10 @@ export default function Contact() {
           We'd love to hear from you. Send us a message!
         </p>
 
-        <form onSubmit={handleSubmit} style={styles.form}>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          postToDiscord();
+        }} style={styles.form}> 
           <input
             type="text"
             name="name"

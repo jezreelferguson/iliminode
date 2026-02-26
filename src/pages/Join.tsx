@@ -18,7 +18,7 @@ function Join() {
     });
   }
   
-  const webHookURL = "https://discord.com/api/webhooks/1475814436899000411/dSoOmGDprQHTjue9P4azG7h7icBw9FtAy1pOO_WsUB9gWK1Md10Ns2F6P89mpPNgKDww";
+  const webHookURL = import.meta.env.JOIN_US_WEBHOOK_URL;
   console.log("Webhook URL:", webHookURL); // Debugging line to check if the webhook URL is loaded correctly
   const postToDiscord = async () => {
   try {
