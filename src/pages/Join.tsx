@@ -17,11 +17,12 @@ function Join() {
       [e.target.name]: e.target.value,
     });
   }
-  
+  // for local testing
+  // const webhookURL = import.meta.env.VITE_JOIN_US_WEBHOOK_URL; //
   const postToDiscord = async () => {
   try {
     const res = await axios.post(
-      '/api/join',
+      '/api/join', 
       {
         name: formData.name,
         email: formData.email,
