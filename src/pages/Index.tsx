@@ -427,8 +427,8 @@ const IliminodeWebsite: React.FC = () => {
 
 
           <div style={styles.contactContainer}>
-              <p>Contact us: <a href="mailto:contact@iliminode.org">contact@iliminode.org</a></p>
-              <p>Call: +233 500 535 430</p>
+              <p>Contact us: <a href="mailto:iliminode@gmail.com" style={styles.emailLink}>iliminode@gmail.com</a></p>
+              <p style={styles.phone}>Call:<a href="tel:+233249409742"> +233 24 940 9742</a></p>
           </div>
 
           <div style={styles.footerInfo}>
