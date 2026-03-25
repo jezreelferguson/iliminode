@@ -32,7 +32,7 @@ const IliminodeWebsite: React.FC = () => {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
  const team = "Anokye Ferguson Adu"
-  // const team2 = "Chrisman Boakye Yiadom"
+  const team2 = "Chrisman Boakye Yiadom"
   const team3 = "Augustine Owusu Fordjour"
   useEffect(() => {
     const handleScroll = () => {
@@ -363,11 +363,11 @@ const IliminodeWebsite: React.FC = () => {
             <h3 style={styles.teamName}>{team}</h3>
             <p style={styles.teamRole}>Founder & Tech Lead</p>
           </div>
-          {/* <div style={styles.teamMember}>
+          <div style={styles.teamMember}>
             <img src={logo} alt="Chrisman Boakye Yiadom" style={styles.teamPhoto} />
             <h3 style={styles.teamName}>{team2}</h3>
             <p style={styles.teamRole}>Co-Founder & Creative Director</p>
-          </div> */}
+          </div>
            <div style={styles.teamMember}>
             <img src={augustine} alt="" style={styles.teamPhoto} />
             <h3 style={styles.teamName}>{team3}</h3>
